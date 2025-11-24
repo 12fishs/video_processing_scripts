@@ -9,4 +9,5 @@ VID="$1"
 START="$2"
 END="$3"
 
-ffmpeg -i "$VID" 
+# for deinterlacing use -vf bwdif=1
+ffmpeg -i "$VID" # -vf bwdif=1 deinterlacing apprently important??
