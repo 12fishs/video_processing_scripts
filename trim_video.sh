@@ -20,7 +20,9 @@ ffmpeg -i "$VID" -ss "$START" -to "$END" \
   # CROPPING OPTION
   #-vf "crop=" \
   # NEAR-LOSSLESS OPTION
-  -c:v prores_ks -profile:v 3 -pix_fmt yuv422p10le -r 24 \
+  #-c:v prores_ks -profile:v 3 -pix_fmt yuv422p10le -r 24 \
+  # QUICK CHECK OPTION
+  -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p -r 24 \
   # YOUTUBE ENCODING - change container to mp4
   #-c:v libx264 -preset veryslow -crf 18 -pix_fmt yuv420p -r 24 \
   -c:a copy "$OUTPUT"
